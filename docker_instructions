@@ -1,5 +1,11 @@
 docker build -f deustorl.Dockerfile -t inakivazquez/deustorl:base1 .
+
+# For CPU-only support
 docker container create -it --name rltrain -v .:/home/rl/my_scripts inakivazquez/deustorl:base1
+
+# For GPU support
+docker container create -it --gpus all --name rltrain -v .:/home/rl/my_scripts inakivazquez/deustorl:base1
+
 docker start rltrain
 docker exec -it rltrain /bin/bash
 
