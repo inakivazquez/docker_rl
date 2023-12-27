@@ -1,5 +1,5 @@
-docker build -f deustorl.Dockerfile -t deustorl .
-docker container create -it --name rltrain -v .:/home/rl/my_scripts inakivazquez/deustorl
+docker build -f deustorl.Dockerfile -t inakivazquez/deustorl:base1 .
+docker container create -it --name rltrain -v .:/home/rl/my_scripts inakivazquez/deustorl:base1
 docker start rltrain
 docker exec -it rltrain /bin/bash
 
