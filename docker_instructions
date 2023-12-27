@@ -1,0 +1,10 @@
+docker build -f deustorl.Dockerfile -t deustorl .
+docker container create -it --name rltrain -v $(pwd):/home/rl/my_scripts deustorl
+docker start rltrain
+docker exec -it rltrain /bin/bash
+
+
+
+docker run -ti --rm \
+       -e DISPLAY=$DISPLAY \
+       -v /tmp/.X11-unix:/tmp/.X11-unix 
