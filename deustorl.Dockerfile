@@ -20,6 +20,7 @@ WORKDIR /home/$USERNAME
 RUN pip install gymnasium[all]==0.29.1
 RUN pip install stable-baselines3[extra]==2.2.1 rl-zoo3==2.2.1
 RUN pip install mujoco==2.3.7
+RUN pip uninstall mujoco-py
 
 RUN mkdir /home/$USERNAME/examples
 COPY examples /home/$USERNAME/examples
