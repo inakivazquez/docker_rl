@@ -7,7 +7,7 @@ from stable_baselines3.common.evaluation import evaluate_policy
 env = gym.make("LunarLander-v2", render_mode="rgb_array")
 
 # Instantiate the agent
-model = PPO(policy="MlpPolicy", env=env, n_steps=1024, batch_size=64, n_epochs=4, gamma=0.999, gae_lambda=0.98, ent_coef=0.01, verbose=True)
+model = PPO('MlpPolicy', env=env, learning_rate=0.002, batch_size=64, policy_kwargs=dict(net_arch=[8,32]), verbose=True)    
 
 # Train the agent and display a progress bar
 model.learn(total_timesteps=int(2e5), progress_bar=True)
