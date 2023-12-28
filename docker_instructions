@@ -7,7 +7,7 @@ docker container create -it --name rltrain -v .:/home/rl/my_scripts inakivazquez
 docker container create -it --gpus all --name rltrain -v .:/home/rl/my_scripts inakivazquez/deustorl:base1
 
 # For GPU + Mujoco support
-docker container create -it --name rltrain -v $(pwd):/home/rl/my_scripts -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix inakivazquez/deustorl:base1
+docker container create -it --gpus all --name rltrain -v .:/home/rl/my_scripts -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix inakivazquez/deustorl:base1
 
 docker start rltrain
 docker exec -it rltrain /bin/bash
