@@ -7,7 +7,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get -y update \
     && apt-get install --no-install-recommends -y \
     libglu1-mesa-dev libgl1-mesa-dev libosmesa6-dev \
-    xvfb unzip patchelf ffmpeg cmake swig \
+    xvfb unzip patchelf ffmpeg cmake swig nano \
     && apt-get autoremove -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
@@ -20,6 +20,7 @@ WORKDIR /home/$USERNAME
 RUN pip install gymnasium[all]==0.29.1
 RUN pip install stable-baselines3[extra]==2.2.1 rl-zoo3==2.2.1
 RUN pip install mujoco==2.3.7
+RUN pip uninstall mujoco-py
 
 RUN mkdir /home/$USERNAME/examples
 COPY examples /home/$USERNAME/examples
