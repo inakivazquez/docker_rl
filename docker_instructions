@@ -6,18 +6,18 @@ docker container create -it --name rltrain -v .:/home/rl/my_scripts inakivazquez
 # For GPU support
 docker container create -it --gpus all --name rltrain -v .:/home/rl/my_scripts inakivazquez/deustorl:base1
 
-# For GPU + Mujoco support in Linux/Windows(WSL)
+# For GPU + Mujoco support in Linux/Windows(desde WSL-Ubuntu)
 docker container create -it --gpus all --name rltrain -v .:/home/rl/my_scripts -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -p 2000-2002:2000-2002 -e SDL_VIDEODRIVER=x11 inakivazquez/deustorl:base1
-
-
 
 docker start rltrain
 docker exec -it rltrain /bin/bash
 
 WINDOWS, soporte GUI:
-Instalar WSL para Windows 11
-Instalar Ubuntu sobre WSL
 https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview
+Instalar WSL para Windows 11
+Instalar Ubuntu sobre WSL:
+wsl --install Ubuntu
+
 
 
 
