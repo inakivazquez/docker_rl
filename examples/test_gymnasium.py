@@ -4,8 +4,8 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Test Gymnasium environments with random actions.')
 parser.add_argument('-e', '--env', type=str, default="CartPole-v1", help='environment to test (e.g. CartPole-v1)')
-parser.add_argument('-n', '--nsteps', type=int, default=1_000, help='number of steps to execute)')
-parser.add_argument('-r', '--recvideo', action="store_true", help='record and store video in a \"video\" directory, instead of using the screen)')
+parser.add_argument('-n', '--nsteps', type=int, default=1_000, help='number of steps to execute')
+parser.add_argument('-r', '--recvideo', action="store_true", help='record and store video in a \"video\" directory, instead of using the screen')
 
 args = parser.parse_args()
 
