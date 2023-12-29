@@ -11,9 +11,9 @@ parser = argparse.ArgumentParser(description='Train an environment with an SB3 a
 parser.add_argument('-e', '--env', type=str, default="CartPole-v1", help='environment to test (e.g. CartPole-v1)')
 parser.add_argument('-a', '--algo', type=str, default='PPO',
 					help='algorithm to test from SB3, such as PPO (default), SAC, DQN... using default hyperparameters')
-parser.add_argument('-n', '--nsteps', type=int, default=100_000, help='number of steps to train)')
-parser.add_argument('-r', '--recvideo', action="store_true", help='record and store video in a \"video\" directory, instead of using the screen)')
-parser.add_argument('-t', '--tblog', action="store_true", help='generate tensorboard logs in the \"logs\" directory)')
+parser.add_argument('-n', '--nsteps', type=int, default=100_000, help='number of steps to train')
+parser.add_argument('-r', '--recvideo', action="store_true", help='record and store video in a \"video\" directory, instead of using the screen')
+parser.add_argument('-t', '--tblog', action="store_true", help='generate tensorboard logs in the \"logs\" directory')
 
 args = parser.parse_args()
 
