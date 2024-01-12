@@ -27,3 +27,5 @@ COPY examples /home/$USERNAME/examples
 # For executing the tensorboard binary (which is in the .local/bin directory)
 ENV PATH=$PATH:/home/$USERNAME/.local/bin
 
+ENTRYPOINT ["/bin/bash"]
+

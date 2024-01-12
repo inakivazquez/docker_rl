@@ -1,0 +1,23 @@
+# This compose file must be in the users local directory, check this to avoid
+
+services:
+    rltrain:
+        image: "inakivazquez/deustorl:base3"
+        container_name: "rltrain"
+        network_mode: "host"
+        privileged: true
+        tty: true
+        stdin_open: true  
+        volumes:
+            - .:/home/rl/my_scripts
+            - /tmp/.X11-unix:/tmp/.X11-unix
+        environment:
+            - DISPLAY=$DISPLAY
+            - SDL_VIDEODRIVER=x11
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                        - capabilities: [gpu]
+                          count: all
+
