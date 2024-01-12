@@ -1,8 +1,11 @@
 # Docker containers for Reinforcement Learning experimentation
 This repository contains the necessary files to create docker containers for experimenting with [Gymnasium](https://gymnasium.farama.org/) and [Stable-Baselines3](https://stable-baselines3.readthedocs.io/).
+
+The containers can be executed in Linux and Windows (either directly of using [WSL2](https://learn.microsoft.com/en-us/windows/wsl/about#what-is-wsl-2)). 
+
 ### Features support
 
-| Feature  | Linux/WSL | Windows |
+| Feature  | Linux/WSL2 | Windows |
 | ------------- | :-------------: | :-------------: |
 | GPU CUDA support  | X | X |
 | Interactive visualization	| X 
@@ -14,17 +17,18 @@ This repository contains the necessary files to create docker containers for exp
 | Atari environments | X | X | 
 
 
-### Use the container with `docker compose`
+## Basic instructions
+The following instructions are for easily creating and using containers with `docker compose`:
 1. Create a `rl` directory and move there
 2. Download in that directory the `compose.yaml` file from github
 
 3. Execute one of the below options, depending on your system (it may be necessary to use `sudo` preceding the docker commands).
    Note that it may take some minutes to download the image the first time. Do not forget the final `-d`
 
-   * Starting the Linux/WSL CPU-only container:
+   * Starting the Linux/WSL2 CPU-only container:
 `docker compose up linux-cpu -d`
 
-   * Starting the Linux/WSL GPU-enabled container:
+   * Starting the Linux/WSL2 GPU-enabled container:
 `docker compose up linux-gpu -d`
 
    * Starting the Windows CPU-only container:
