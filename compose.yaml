@@ -1,23 +1,29 @@
 # This compose file must be in the users local directory, check this to avoid
 
 services:
-    rltrain-cpu:
+    base:
         image: "inakivazquez/deustorl:base3"
         container_name: "rltrain"
-        network_mode: "host"
         privileged: true
         tty: true
-        stdin_open: true  
+        stdin_open: true
         volumes:
             - .:/home/rl/my_scripts
+
+    linux-cpu:
+        extends:
+            service: rltrain-base
+        network_mode: "host"
+        privileged: true
+        volumes:
             - /tmp/.X11-unix:/tmp/.X11-unix
         environment:
             - DISPLAY=$DISPLAY
             - SDL_VIDEODRIVER=x11
 
-    rltrain-gpu:
+    linux-gpu:
         extends:
-            service: rltrain-cpu
+            service: rltrain-linux-cpu
         deploy:
             resources:
                 reservations:
@@ -25,17 +31,14 @@ services:
                         - capabilities: [gpu]
                           count: all
 
-    rltrain-windows-cpu:
-        image: "inakivazquez/deustorl:base3"
-        container_name: "rltrain"
-        network_mode: "host"
+    windows-cpu:
+        extends:
+            service: rltrain-base
+        ports:
+            - "6006:6006"
         privileged: true
-        tty: true
-        stdin_open: true  
-        volumes:
-            - .:/home/rl/my_scripts
 
-    rltrain-windows-gpu:
+    windows-gpu:
         extends:
             service: rltrain-windows-cpu
         deploy:

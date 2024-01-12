@@ -1,14 +1,30 @@
-# DOWNLOAD AND INSTALLING THE CONTAINER IMAGE ON YOUR COMPUTER
-# It may be necessary to use 'sudo' in the below commands
-docker pull inakivazquez/deustorl:base3
+# FEATURES SUPPORT
+				            Linux/WSL	Windows
+GPU support                 X		    X
+Interactive visualization	X		
+Video recording			    X		    X
+Environments:
+Classic control             X		    X
+Box2D                       X		    X
+ToyText                     X		    X
+MuJoCo                      X
+Atari                       X           X
+
 # Create a rl directory, move there and download the compose.yaml file from github
+# It may be necessary to use 'sudo' in the docker commands
 
 # USE THE CONTAINER
-# Starting the CPU-only container:
-docker compose up rltrain-cpu -d
+# Starting the Linux/WSL CPU-only container:
+docker compose up linux-cpu -d
 
-# Starting the GPU-enabled container:
-docker compose up rltrain-gpu -d
+# Starting the Linux/WSL GPU-enabled container:
+docker compose up linux-gpu -d
+
+# Starting the Windows CPU-only container:
+docker compose up windows-cpu -d
+
+# Starting the Windows GPU-enabled container:
+docker compose up windows-gpu -d
 
 # Open a terminal session over the container
 # (multiple terminal sessions maybe opened on the same container for starting tensorboard or parallel trainings)
@@ -46,7 +62,8 @@ wsl --install Ubuntu
 GPU CUDA SUPPORT, installation instructions:
 https://developer.nvidia.com/cuda-11-8-0-download-archive
 
-
+# DOWNLOAD AND INSTALLING THE CONTAINER IMAGE ON YOUR COMPUTER
+docker pull inakivazquez/deustorl:base3
 
 -----------------
 # Version with no network mode host and explicit port mapping. Ports 2000-2002 is for X server forwarding, port 6006 is for tensorboard forwarding
