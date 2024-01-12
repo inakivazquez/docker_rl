@@ -1,4 +1,4 @@
-# This compose file must be in the users local directory, check this to avoid
+# This compose file must be in the users working directory to map the development path
 
 services:
     base:
@@ -12,7 +12,7 @@ services:
 
     linux-cpu:
         extends:
-            service: rltrain-base
+            service: base
         network_mode: "host"
         privileged: true
         volumes:
@@ -23,7 +23,7 @@ services:
 
     linux-gpu:
         extends:
-            service: rltrain-linux-cpu
+            service: linux-cpu
         deploy:
             resources:
                 reservations:
@@ -33,14 +33,14 @@ services:
 
     windows-cpu:
         extends:
-            service: rltrain-base
+            service: base
         ports:
             - "6006:6006"
         privileged: true
 
     windows-gpu:
         extends:
-            service: rltrain-windows-cpu
+            service: windows-cpu
         deploy:
             resources:
                 reservations:
