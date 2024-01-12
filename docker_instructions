@@ -1,11 +1,14 @@
 # DOWNLOAD AND INSTALLING THE CONTAINER IMAGE ON YOUR COMPUTER
 # It may be necessary to use 'sudo' in the below commands
 docker pull inakivazquez/deustorl:base3
-# Download the compose.yaml file from github
+# Create a rl directory, move there and download the compose.yaml file from github
 
 # USE THE CONTAINER
-# Starting the container:
-docker compose up -d
+# Starting the CPU-only container:
+docker compose up rltrain-cpu -d
+
+# Starting the GPU-enabled container:
+docker compose up rltrain-gpu -d
 
 # Open a terminal session over the container
 # (multiple terminal sessions maybe opened on the same container for starting tensorboard or parallel trainings)
