@@ -24,7 +24,8 @@ services:
                     devices:
                         - capabilities: [gpu]
                           count: all
-    rltrain-windows:
+
+    rltrain-windows-cpu:
         image: "inakivazquez/deustorl:base3"
         container_name: "rltrain"
         network_mode: "host"
@@ -33,3 +34,13 @@ services:
         stdin_open: true  
         volumes:
             - .:/home/rl/my_scripts
+
+    rltrain-windows-gpu:
+        extends:
+            service: rltrain-windows-cpu
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                        - capabilities: [gpu]
+                          count: all
