@@ -3,8 +3,8 @@ docker build -f deustorl.Dockerfile -t inakivazquez/deustorl:base3 .
 # It may be necessary to use 'sudo' in the below commands
 docker pull inakivazquez/deustorl:base3
 
-# For GPU + Mujoco support in Linux/Windows(desde WSL-Ubuntu). Ports 2000-2002 is for X server forwarding, port 6006 is for tensorboard forwarding
-docker container create --name rltrain --privileged -it --gpus all -v .:/home/rl/my_scripts -e DISPLAY=$DISPLAY -e SDL_VIDEODRIVER=x11 -v /tmp/.X11-unix:/tmp/.X11-unix -p 2000-2002:2000-2002 -p 6006:6006 inakivazquez/deustorl:base3
+# For GPU + Mujoco support in Linux/Windows(from WSL-Ubuntu) using network mode host
+docker container create --name rltrain --privileged --network host -it --gpus all -v .:/home/rl/my_scripts -e DISPLAY=$DISPLAY -e SDL_VIDEODRIVER=x11 -v /tmp/.X11-unix:/tmp/.X11-unix inakivazquez/deustorl:base3
 
 docker start rltrain
 docker exec -it rltrain /bin/bash
@@ -24,3 +24,8 @@ https://developer.nvidia.com/cuda-11-8-0-download-archive
 TENSORBOARD, iniciar con:
 tensorboard --logdir logs --bind_all
 para que se pueda acceder desde el navegador del host
+
+-----------------
+# Version with no network host host and explicit port mapping. Ports 2000-2002 is for X server forwarding, port 6006 is for tensorboard forwarding
+docker container create --name rltrain --privileged -it --gpus all -v .:/home/rl/my_scripts -e DISPLAY=$DISPLAY -e SDL_VIDEODRIVER=x11 -v /tmp/.X11-unix:/tmp/.X11-unix -p 2000-2002:2000-2002 -p 6006:6006 inakivazquez/deustorl:base3
+
