@@ -22,7 +22,10 @@ The following instructions are for easily creating and using containers with `do
 1. Select a working directory for your project (e.g. `rl-scripts`) and move there. This directory will be mapped inside the container in the path `/home/rl/my_scripts`.
 2. Download in that directory the `compose.yaml` file from github.
 
-3. Execute one of the below options, depending on your system (it may be necessary to use `sudo` preceding the docker commands).  **Do not forget the final `-d`**.
+3. Execute one of the below options, depending on your system (it may be necessary to use `sudo` preceding the docker commands).  > [!WARNING]
+> Do not forget the final `-d`
+
+**Do not forget the final `-d`**.
    
    Note that it may take some minutes to download the image the first time.
 
@@ -86,8 +89,8 @@ python test_sb3.py --env LunarLander-v2 --algo ppo -n 200000 -t
 ```
 
 > [!NOTE]
-> For videos and tensoboard logs, the `videos` and `logs` directories are created in the working directory, therefore for the above examples, in order to access`videos` and `logs` from the host computer, those directories should be created under the `my_scripts`. That can be easily done by invoking the example scripts from the `my_scripts` directory:
-```
+> For videos and tensoboard logs, the `videos` and `logs` directories are created in the working directory, therefore for the above examples, in order to be able to access`videos` and `logs` from the host computer, those directories should be generated under the `my_scripts` (which is mapped on the host). That can be easily done by invoking the example scripts from the `my_scripts` directory:
+```console
 /home/rl/my_scripts$ python ../examples/test_sb3.py --env LunarLander-v2 --algo ppo -n 200000 -t
 ```
 
