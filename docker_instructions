@@ -16,6 +16,9 @@ Instalar WSL para Windows 11
 Instalar Ubuntu sobre WSL:
 wsl --install Ubuntu
 
+-------------
+GPU CUDA SUPPORT, installation instructions:
+https://developer.nvidia.com/cuda-11-8-0-download-archive
 
 ---------------
 TENSORBOARD, iniciar con:
