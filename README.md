@@ -104,7 +104,7 @@ python test_sb3.py --env LunarLander-v2 --algo ppo -n 200000 -t
 > [!NOTE]
 > For videos and tensoboard logs, the `videos` and `logs` directories are created in the working directory, therefore for the above examples, in order to be able to access`videos` and `logs` from the host computer, those directories should be generated under the `my_scripts` (which is mapped on the host). That can be easily done by invoking the example scripts from the `my_scripts` directory:
 ```console
-foo@bar:/home/rl/my_scripts$ python ../examples/test_sb3.py --env LunarLander-v2 --algo ppo -n 200000 -t
+rl@foobar:/home/rl/my_scripts$ python ../examples/test_sb3.py --env LunarLander-v2 --algo ppo -n 200000 -t
 ```
 
 ## Appendix: Additional instructions for further hacking and customization
