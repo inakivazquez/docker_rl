@@ -1,4 +1,9 @@
 # Docker containers for Reinforcement Learning experimentation
+
+<p align="center">
+  <img src="https://github.com/inakivazquez/docker_rl/assets/47280218/d344da8c-19e4-4271-befa-b59b87dd503f" width="200" height="200"/>
+</p>
+
 This repository contains the necessary files to create docker containers for experimenting with [Gymnasium](https://gymnasium.farama.org/) and [Stable-Baselines3](https://stable-baselines3.readthedocs.io/).
 
 The containers can be executed in Linux and Windows (either directly of using [WSL2](https://learn.microsoft.com/en-us/windows/wsl/about#what-is-wsl-2)). 
