@@ -79,8 +79,8 @@ The container provides the following directory structure:
    └── my_scripts
 ```
 
-* `my_scripts`: this is where the working directory of the host is mapped
-* `examples`: some example scripts are provided here, to check the functionality:
+* `my_scripts`: this is where the working directory of the host is mapped. Your python scripts and experiments should be here.
+* `examples`: some example scripts are provided here, to check basic functionality
    * `check_cuda.py`: checks that CUDA is properly configured and displays the number of GPUs available.
    * `test_gymnasium.py`: launches a Gymnasium environment passed as parameter (`--help` for detailed parameters information).
    * `test_sb3.py`: launches a Stable-Baselines3 training with a Gymnasium environment (`--help` for detailed parameters information).
@@ -122,13 +122,13 @@ docker container create --name rltrain --privileged --network host -it --gpus al
 docker start rltrain
 docker exec -it rltrain /bin/bash
 ```
-### Interactive support in Windows via WSL2:
+### Full features in Windows via WSL2:
 Follow the instructions at the [Ubuntu tutorial for WSL2](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview), basically: 
-1. Install WSL for Windows 11
+1. Install WSL for Windows 10 / 11
 1. Install Ubuntu over WSL:
 ```
 wsl --install Ubuntu
 ```
 
 ### GPU CUDA installation instructions:
-Follow the official instructions at [NVIDIA website](https://developer.nvidia.com/cuda-11-8-0-download-archive)
+Follow the official instructions at [NVIDIA website](https://developer.nvidia.com/cuda-12-1-0-download-archive).
