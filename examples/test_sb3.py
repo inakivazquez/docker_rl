@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-""" Basic Stable-Baselines3 tester on Gymansium environments.
+""" Basic Stable-Baselines3 tester on Gymnasium environments.
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
