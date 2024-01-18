@@ -2,7 +2,7 @@
 
 services:
     base:
-        image: "inakivazquez/deustorl:base3"
+        image: "inakivazquez/rl-base"
         container_name: "rltrain"
         privileged: true
         tty: true

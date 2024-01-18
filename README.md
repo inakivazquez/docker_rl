@@ -116,14 +116,14 @@ rl@foobar:/home/rl/my_scripts$ python ../examples/test_sb3.py --env LunarLander-
 
 ### Build the image from the GitHub repository
 ```
-docker build -f deustorl-base3.Dockerfile -t inakivazquez/deustorl:base3 .
+docker build -f rl-base.Dockerfile -t inakivazquez/rl-base:latest .
 ```
 
 ### Direct installation without docker compose
 This example is for CUDA + MuJoCo support in Linux/WSL2 using network mode host:
 ```
-docker pull inakivazquez/deustorl:base3
-docker container create --name rltrain --privileged --network host -it --gpus all -v .:/home/rl/my_scripts -e DISPLAY=$DISPLAY -e SDL_VIDEODRIVER=x11 -v /tmp/.X11-unix:/tmp/.X11-unix inakivazquez/deustorl:base3
+docker pull inakivazquez/rl-base
+docker container create --name rltrain --privileged --network host -it --gpus all -v .:/home/rl/my_scripts -e DISPLAY=$DISPLAY -e SDL_VIDEODRIVER=x11 -v /tmp/.X11-unix:/tmp/.X11-unix inakivazquez/rl-base
 docker start rltrain
 docker exec -it rltrain /bin/bash
 ```
