@@ -27,7 +27,7 @@ The following instructions are for easily creating and using containers with `do
 1. Select a working directory for your project in your host computer (e.g. `rl-scripts`) and move there. This directory will be mapped inside the container in the path `/home/rl/my_scripts`.
 2. Download in that directory the `compose.yaml` file from github.
 
-3. Execute one of the below options, depending on your system (it may be necessary to use `sudo` preceding the docker commands).  
+3. Execute one of the below options, depending on your system, to create the container (default name is `rltrain`). It may be necessary to use `sudo` preceding the docker commands in Linux.  
 > [!NOTE]
 > It may take some minutes to download the image the first time.
 
@@ -53,17 +53,17 @@ The following instructions are for easily creating and using containers with `do
 > [!WARNING]
 > Do not forget the final `-d`
 
-5. Open a terminal session over the container (multiple terminal sessions maybe opened on the same container for starting tensorboard or parallel trainings):
+4. Open a terminal session on the container `rltrain` (multiple terminal sessions maybe opened on the same container for starting tensorboard or parallel trainings):
    ```
    docker exec -it rltrain /bin/bash
    ```
 
-7. For stopping the container after working with it:
+5. For stopping the container after working with it:
    ```
    docker stop rltrain
    ```
 
-9. To start the container again, just execute the previous `docker compose up` command.
+6. To start the container again, just execute the previous `docker compose up` command.
 
 
 ### Starting Tensorboard
