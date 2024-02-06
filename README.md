@@ -63,7 +63,11 @@ The following instructions are for easily creating and using containers with `do
    docker stop rltrain
    ```
 
-6. To start the container again, just execute the previous `docker compose up` command.
+6. To start the container again, just execute the previous `docker compose up` command, or:
+   ```
+   docker start rltrain
+   ```
+   
 
 
 ### Starting Tensorboard
