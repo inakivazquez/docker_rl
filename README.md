@@ -21,7 +21,7 @@ The containers can be executed in Linux and Windows (either directly of using [W
 | MuJoCo environments | :heavy_check_mark:
 | Atari environments | :heavy_check_mark: | :heavy_check_mark: | 
 
-## Requirements
+## Prerequisites
 * Docker installed ([Docker engine preferred](https://docs.docker.com/engine/install/ubuntu/) in Linux systems)
 * (for GPU support) [NVIDIA CUDA drivers](https://developer.nvidia.com/cuda-12-1-0-download-archive) and [NVIDIA Container Toolkit installed](https://github.com/NVIDIA/nvidia-container-toolkit)
 
